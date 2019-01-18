@@ -9,17 +9,24 @@ class App extends Component {
     super();
     this.state = {
       heroes: [],
-      name: '',
-      superpower: ''
+      nameInput: '',
+      superpowerInput: ''
     }
   }
 
   handleNameInput(val){
-    this.setState({name: val})
+    this.setState({nameInput: val})
   }
 
   handleSuperpowerInput(val){
-    this.setState({superPower: val})
+    this.setState({superpowerInput: val})
+  }
+
+  handleAddHero(){
+    const newHero = {
+      name: this.state.name,
+      superpower: this.state.superpower
+    }
   }
 
   //componentDidMount() {
@@ -36,11 +43,13 @@ class App extends Component {
       <div className="App">
         <Thanos />
         {mappedHeroes}
-        <input onChange = {(e) => this.handleNameInput(e.target.value)}
-               placeholder = 'Enter Hero Name Here'/>
-        <input onChange = {(e) => this.handleSuperpowerInput(e.target.value)}
-               placeholder = 'Enter Superpower Here'/>
-        <button>Add Hero</button>
+        <div>
+          <input onChange = {(e) => this.handleNameInput(e.target.value)}
+                 placeholder = 'Enter Hero Name Here'/>
+          <input onChange = {(e) => this.handleSuperpowerInput(e.target.value)}
+                 placeholder = 'Enter Superpower Here'/>
+          <button onClick = {() => this.handleAddHero}>Add Hero</button>
+        </div>
       </div>
     );
   }
