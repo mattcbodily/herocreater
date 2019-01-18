@@ -3,8 +3,8 @@ import React from 'react';
 const DisplayHero = (props) => {
     return(
         <div>
-            <h3>{props.heroes.name}</h3>
-            <h5>Superpower: {props.heroes.superpower}</h5>
+            <h4>{props.heroes.name}</h4>
+            <h6>Superpower: {props.heroes.superpower}</h6>
         </div>
     )
 }

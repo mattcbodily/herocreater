@@ -24,19 +24,31 @@ class App extends Component {
 
   handleAddHero(){
     const newHero = {
-      name: this.state.name,
-      superpower: this.state.superpower
+      name: this.state.nameInput,
+      superpower: this.state.superpowerInput
     }
+    axios.post('/api/heroes', newHero)
+    .then (response => {
+      this.setState({heroes: response.data})
+    })
+    this.setState({nameInput: ''})
+    this.setState({superpowerInput: ''})
   }
 
-  //componentDidMount() {
-  //  axios.get('/api/endpoint')
-  //  .then(res => console.log(res))
-  //}
+  handleGetAvengers(){
+    axios.get('/api/heroes')
+    .then (response => {
+      this.setState({
+        heroes: response.data
+      })
+    })
+  }
+
   render() {
     const mappedHeroes = this.state.heroes.map((heroObj) => {
+      console.log(heroObj)
       return(
-        <DisplayHero key = {heroObj.index} message = {heroObj}/>
+        <DisplayHero key = {heroObj.index} heroes = {heroObj}/>
       )
     })
     return (
@@ -44,11 +56,12 @@ class App extends Component {
         <Thanos />
         {mappedHeroes}
         <div>
+          <button onClick = {() => this.handleGetAvengers()}>Assemble</button>
           <input onChange = {(e) => this.handleNameInput(e.target.value)}
                  placeholder = 'Enter Hero Name Here'/>
           <input onChange = {(e) => this.handleSuperpowerInput(e.target.value)}
                  placeholder = 'Enter Superpower Here'/>
-          <button onClick = {() => this.handleAddHero}>Add Hero</button>
+          <button onClick = {() => this.handleAddHero()}>Add Hero</button>
         </div>
       </div>
     );

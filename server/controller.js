@@ -34,5 +34,17 @@ let allHeroes = [
 module.exports = {
     getHeroes: (req, res) => {
         res.status(200).send(allHeroes)
+    },
+
+    addHeroes: (req, res) => {
+        const index = allHeroes[allHeroes.length - 1].index+1
+
+        const newHero = {
+            name: req.body.name,
+            superpower: req.body.superpower,
+            index: index
+        }
+        allHeroes.push(newHero)
+        res.status(200).send(allHeroes)
     }
 }

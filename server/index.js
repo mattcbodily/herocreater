@@ -7,6 +7,8 @@ app.use(bodyParser.json())
 
 app.get('/api/heroes', ctrl.getHeroes)
 
+app.post('/api/heroes', ctrl.addHeroes)
+
 app.listen(4000, () => {
     console.log('Avengers Assembling on port 4000');
 })
