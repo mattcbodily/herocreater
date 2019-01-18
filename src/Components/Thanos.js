@@ -5,7 +5,7 @@ class Thanos extends Component {
     constructor(){
         super();
         this.state = {
-            name: Thanos,
+            name: 'Thanos',
             health: 10,
             healthMessage: ''
         }
@@ -14,7 +14,9 @@ class Thanos extends Component {
 
     render(){
         return(
-            <div></div>
+            <div>
+                <DisplayVillain bigBaddie = {this.state}/>
+            </div>
         )
     }
 }

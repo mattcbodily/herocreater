@@ -22,6 +22,15 @@ class App extends Component {
     this.setState({superpowerInput: val})
   }
 
+  handleGetAvengers(){
+    axios.get('/api/heroes')
+    .then (response => {
+      this.setState({
+        heroes: response.data
+      })
+    })
+  }
+
   handleAddHero(){
     const newHero = {
       name: this.state.nameInput,
@@ -33,15 +42,6 @@ class App extends Component {
     })
     this.setState({nameInput: ''})
     this.setState({superpowerInput: ''})
-  }
-
-  handleGetAvengers(){
-    axios.get('/api/heroes')
-    .then (response => {
-      this.setState({
-        heroes: response.data
-      })
-    })
   }
 
   render() {
@@ -58,9 +58,11 @@ class App extends Component {
         <div>
           <button onClick = {() => this.handleGetAvengers()}>Assemble</button>
           <input onChange = {(e) => this.handleNameInput(e.target.value)}
-                 placeholder = 'Enter Hero Name Here'/>
+                 placeholder = 'Enter Hero Name Here'
+                 value = {this.state.nameInput}/>
           <input onChange = {(e) => this.handleSuperpowerInput(e.target.value)}
-                 placeholder = 'Enter Superpower Here'/>
+                 placeholder = 'Enter Superpower Here'
+                 value = {this.state.superpowerInput}/>
           <button onClick = {() => this.handleAddHero()}>Add Hero</button>
         </div>
       </div>
