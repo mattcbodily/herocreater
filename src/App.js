@@ -53,7 +53,7 @@ class App extends Component {
     })
     return (
       <div className="App">
-        <Thanos />
+        <Thanos numOfHeroes = {this.state.heroes}/>
         {mappedHeroes}
         <div>
           <button onClick = {() => this.handleGetAvengers()}>Assemble</button>

@@ -6,16 +6,24 @@ class Thanos extends Component {
         super();
         this.state = {
             name: 'Thanos',
-            health: 10,
+            health: 16,
             healthMessage: ''
         }
     }
+    
+    handleThanosHealth(){
+        const damage = this.props.numOfHeroes.length;
+        this.setState({health: 16 - damage})
+    }
 
-
+    
+    
     render(){
+        console.log(this.props.numOfHeroes)
         return(
             <div>
                 <DisplayVillain bigBaddie = {this.state}/>
+                <button onClick = {() => this.handleThanosHealth()}>Attack</button>
             </div>
         )
     }
