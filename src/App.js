@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Thanos from './Components/Thanos'
+import DisplayHero from './Components/DisplayHero'
 
 class App extends Component {
   constructor(){
     super();
     this.state = {
-      heroes: []
+      heroes: [],
+      name: '',
+      superpower: ''
     }
+  }
+
+  handleNameInput(val){
+    this.setState({name: val})
+  }
+
+  handleSuperpowerInput(val){
+    this.setState({superPower: val})
   }
 
   //componentDidMount() {
@@ -15,8 +27,20 @@ class App extends Component {
   //  .then(res => console.log(res))
   //}
   render() {
+    const mappedHeroes = this.state.heroes.map((heroObj) => {
+      return(
+        <DisplayHero key = {heroObj.index} message = {heroObj}/>
+      )
+    })
     return (
       <div className="App">
+        <Thanos />
+        {mappedHeroes}
+        <input onChange = {(e) => this.handleNameInput(e.target.value)}
+               placeholder = 'Enter Hero Name Here'/>
+        <input onChange = {(e) => this.handleSuperpowerInput(e.target.value)}
+               placeholder = 'Enter Superpower Here'/>
+        <button>Add Hero</button>
       </div>
     );
   }
