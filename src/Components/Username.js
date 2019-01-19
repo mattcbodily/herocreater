@@ -14,8 +14,16 @@ class Username extends Component {
     render(){
         return(
             <div>
+            {this.props.heroNumber.length ? (
+            <div>
+                <h4>{this.state.username}'s Hero Squad</h4>
+            </div>
+            ) : (
+            <div>
                 <input onChange = {(e) => this.handleUsernameInput(e.target.value)}
                        placeholder = 'Enter Username Here'/>
+            </div>
+            )}
             </div>
         )
     }

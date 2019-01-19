@@ -21,8 +21,8 @@ class Thanos extends Component {
         return(
             <div>
                 <DisplayVillain bigBaddie = {this.state}/>
-                <button onClick = {() => this.handleThanosHealth()}>Attack</button>
                 <VillainHealth hitpoints = {this.state.health}/>
+                <button onClick = {() => this.handleThanosHealth()}>Attack</button>
             </div>
         )
     }

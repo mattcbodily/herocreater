@@ -57,7 +57,7 @@ class App extends Component {
       {this.state.heroes.length ? (
       <div>
         <Thanos numOfHeroes = {this.state.heroes}/>
-        {mappedHeroes}
+        <Username heroNumber = {this.state.heroes}/>
           <input onChange = {(e) => this.handleNameInput(e.target.value)}
                  placeholder = 'Enter Hero Name Here'
                  value = {this.state.nameInput}/>
@@ -65,11 +65,12 @@ class App extends Component {
                  placeholder = 'Enter Superpower Here'
                  value = {this.state.superpowerInput}/>
           <button onClick = {() => this.handleAddHero()}>Add Hero</button>
+        {mappedHeroes}
       </div>
       ) : (
         <div>
           <h3>Thanos has invaded Earth! It's up to you to assemble the Avengers to defeat him.</h3>
-          <Username />
+          <Username heroNumber = {this.state.heroes}/>
           <button onClick = {() => this.handleGetAvengers()}>Assemble</button>
         </div>  
       )}
