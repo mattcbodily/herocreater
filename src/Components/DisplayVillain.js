@@ -5,7 +5,6 @@ const DisplayVillain = (props) => {
         <div>
             <h1>{props.bigBaddie.name}</h1>
             <h4>HP: {props.bigBaddie.health}</h4>
-            <h4>{props.bigBaddie.healthMessage}</h4>
         </div>
     )
 }
