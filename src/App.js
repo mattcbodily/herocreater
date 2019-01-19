@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import Thanos from './Components/Thanos'
 import DisplayHero from './Components/DisplayHero'
+import Username from './Components/Username'
 
 class App extends Component {
   constructor(){
@@ -10,7 +11,7 @@ class App extends Component {
     this.state = {
       heroes: [],
       nameInput: '',
-      superpowerInput: ''
+      superpowerInput: '',
     }
   }
 
@@ -53,10 +54,10 @@ class App extends Component {
     })
     return (
       <div className="App">
+      {this.state.heroes.length ? (
+      <div>
         <Thanos numOfHeroes = {this.state.heroes}/>
         {mappedHeroes}
-        <div>
-          <button onClick = {() => this.handleGetAvengers()}>Assemble</button>
           <input onChange = {(e) => this.handleNameInput(e.target.value)}
                  placeholder = 'Enter Hero Name Here'
                  value = {this.state.nameInput}/>
@@ -64,7 +65,14 @@ class App extends Component {
                  placeholder = 'Enter Superpower Here'
                  value = {this.state.superpowerInput}/>
           <button onClick = {() => this.handleAddHero()}>Add Hero</button>
-        </div>
+      </div>
+      ) : (
+        <div>
+          <h3>Thanos has invaded Earth! It's up to you to assemble the Avengers to defeat him.</h3>
+          <Username />
+          <button onClick = {() => this.handleGetAvengers()}>Assemble</button>
+        </div>  
+      )}
       </div>
     );
   }
