@@ -46,5 +46,23 @@ module.exports = {
         }
         allHeroes.push(newHero)
         res.status(200).send(allHeroes)
+    },
+
+    editHeroes: (req, res) => {
+        const {index} = req.params;
+        const {body} = req;
+        allHeroes = allHeroes.map((hero) => {
+            if(hero.index === +index) {
+                allHeroes.name = body.name;
+                allHeroes.superpower = body.superpower;
+            }
+            return hero;
+        })
+        res.status(200).send(allHeroes);
+    },
+
+    deleteHeroes: (req, res) => {
+        allHeroes = allHeroes.filter((hero) => hero.index !== +req.params.id)
+        res.status(200).send(allHeroes)
     }
 }

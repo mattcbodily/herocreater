@@ -65,10 +65,12 @@ class App extends Component {
                  placeholder = 'Enter Superpower Here'
                  value = {this.state.superpowerInput}/>
           <button onClick = {() => this.handleAddHero()}>Add Hero</button>
-        {mappedHeroes}
+          <div className = "Herolayout">
+            {mappedHeroes}
+          </div>  
       </div>
       ) : (
-        <div>
+        <div className = "Frontpage">
           <h3>Thanos has invaded Earth! It's up to you to assemble the Avengers to defeat him.</h3>
           <Username heroNumber = {this.state.heroes}/>
           <button onClick = {() => this.handleGetAvengers()}>Assemble</button>

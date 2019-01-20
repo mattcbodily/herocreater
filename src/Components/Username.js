@@ -11,6 +11,7 @@ class Username extends Component {
     handleUsernameInput(val) {
         this.setState({username: val})
     }
+
     render(){
         return(
             <div>

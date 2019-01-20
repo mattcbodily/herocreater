@@ -5,6 +5,8 @@ const DisplayHero = (props) => {
         <div>
             <h4>{props.heroes.name}</h4>
             <h6>Superpower: {props.heroes.superpower}</h6>
+            <button>Edit</button>
+            <button>Delete</button>
         </div>
     )
 }

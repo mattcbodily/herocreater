@@ -9,6 +9,10 @@ app.get('/api/heroes', ctrl.getHeroes)
 
 app.post('/api/heroes', ctrl.addHeroes)
 
+app.put('/api/heroes/:id', ctrl.editHeroes)
+
+app.delete('/api/heroes/:id', ctrl.deleteHeroes)
+
 app.listen(4000, () => {
     console.log('Avengers Assembling on port 4000');
 })
