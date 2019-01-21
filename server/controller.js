@@ -37,7 +37,9 @@ module.exports = {
     },
 
     addHeroes: (req, res) => {
-        const index = allHeroes[allHeroes.length - 1].index+1
+        allHeroes.length 
+        ?  index = allHeroes[allHeroes.length - 1].index+1    
+        : index = 0;
 
         const newHero = {
             name: req.body.name,
@@ -63,6 +65,7 @@ module.exports = {
     },
 
     deleteHeroes: (req, res) => {
+        //findIndex
         allHeroes = allHeroes.filter((hero) => hero.index !== +req.params.index)
         res.status(200).send(allHeroes)
     }

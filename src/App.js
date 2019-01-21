@@ -13,13 +13,13 @@ class App extends Component {
       nameInput: '',
       superpowerInput: '',
     }
-    console.log(this.state.heroes)
+    console.log(this.state.heroes) 
     this.handleUpdateHero = this.handleUpdateHero.bind(this);
     this.handleDeleteHero = this.handleDeleteHero.bind(this);
   }
 
   handleNameInput(val){
-    this.setState({nameInput: val})
+    this.setState({nameInput: val}) 
   }
 
   handleSuperpowerInput(val){
@@ -57,12 +57,13 @@ class App extends Component {
   }
 
   render() {
-    const mappedHeroes = this.state.heroes.map((heroObj, index) => {
+    console.log(this.state.heroes)
+    const mappedHeroes = this.state.heroes.map((heroObj) => {
       return(
-        <DisplayHero key = {index} heroes = {heroObj}
+        <DisplayHero key = {heroObj.index} heroes = {heroObj}
                      updateHero = {this.handleUpdateHero}
                      deleteHero = {this.handleDeleteHero}
-                     index = {index}/>
+                     index = {heroObj.index}/>
       )
     })
     return (
@@ -87,6 +88,13 @@ class App extends Component {
           <h2>Thanos has invaded Earth! It's up to you to assemble the Avengers to defeat him.</h2>
           <Username heroNumber = {this.state.heroes}/>
           <button onClick = {() => this.handleGetAvengers()}>Assemble</button>
+          <input onChange = {(e) => this.handleNameInput(e.target.value)}
+                 placeholder = 'Enter Hero Name Here'
+                 value = {this.state.nameInput}/>
+          <input onChange = {(e) => this.handleSuperpowerInput(e.target.value)}
+                 placeholder = 'Enter Superpower Here'
+                 value = {this.state.superpowerInput}/>
+          <button onClick = {() => this.handleAddHero()}>Add Hero</button>
         </div>  
       )}
       </div>
