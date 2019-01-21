@@ -1,7 +1,7 @@
 import React from 'react'
 
 const VillainHealth = (props) => {
-    if(props.hitpoints >= 10) {
+    if(props.hitpoints > 4) {
         return <h4>Thanos is Strong! Attack him to defeat him!</h4>
     } else if(props.hitpoints === 4) {
         return <h4>We need more heroes! Create some below!</h4>

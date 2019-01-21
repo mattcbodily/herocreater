@@ -20,9 +20,10 @@ class Username extends Component {
                 <h4>{this.state.username}'s Avengers</h4>
             </div>
             ) : (
-            <div>
+                <div>
                 <input onChange = {(e) => this.handleUsernameInput(e.target.value)}
                        placeholder = 'Enter Username Here'/>
+                
             </div>
             )}
             </div>
