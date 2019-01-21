@@ -26,7 +26,7 @@ let allHeroes = [
    },
    {
     name: 'Hawkeye',
-    superpower: 'Shooting Arrows, I guess',
+    superpower: 'Super Sight',
     index: 5
    }
 ]

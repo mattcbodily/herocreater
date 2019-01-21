@@ -2,11 +2,11 @@ import React from 'react';
 
 const DisplayHero = (props) => {
     return(
-        <div>
+        <div className = "Herobox">
             <h4>{props.heroes.name}</h4>
             <h6>Superpower: {props.heroes.superpower}</h6>
-            <button>Edit</button>
-            <button>Delete</button>
+            <button className = "Herobutton">Edit</button>
+            <button className = "Herobutton">Delete</button>
         </div>
     )
 }

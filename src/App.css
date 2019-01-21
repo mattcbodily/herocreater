@@ -1,8 +1,21 @@
 .App {
-  height: 100vh;
+  height: 100%;
   text-align: center;
+  background-image: url("https://i.pinimg.com/originals/03/cd/9b/03cd9b196e48e0426d61fb17635ef83a.jpg");
+  background-position: center;
   background-color: #373737;
   color: white;
+}
+
+.Infinitybox {
+  height: 175px;
+  width: 500px;
+  display: inline-block;
+  padding-top: 50px;
+  background-image: url("https://www.slashfilm.com/wp/wp-content/images/thanos-true-name-e1514997650670.jpg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  border: 1px solid black;
 }
 
 .Herolayout {
@@ -12,8 +25,25 @@
   flex-wrap: wrap;
 }
 
+.Herobox {
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  background-color: rgb(78, 78, 78);
+  border: 1px solid black;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmcH-pYWF4xRmWnsNYGLJcfYdzNQSN5YqWNqw2LqyPve4TFAJjg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.Herobutton {
+  height: 25px;
+  width: 100px;
+}
+
+
 .Frontpage {
-  height: 50px;
+  height: 100vh;
   padding-top: 200px;
   margin: 0px;
 }
@@ -29,6 +59,10 @@ h1 {
 
 h3 {
   margin: 0px;
+}
+
+h4 {
+  margin-top: 30px;
 }
 
 button {
