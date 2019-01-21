@@ -1,5 +1,6 @@
 .App {
-  height: 100%;
+  min-height: 100vh;
+  max-height: 1500px;
   text-align: center;
   background-image: url("https://i.pinimg.com/originals/03/cd/9b/03cd9b196e48e0426d61fb17635ef83a.jpg");
   background-position: center;
@@ -43,8 +44,8 @@
 
 
 .Frontpage {
-  height: 100vh;
-  padding-top: 200px;
+  max-height: 100vh;
+  padding-top: 250px;
   margin: 0px;
 }
 

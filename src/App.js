@@ -71,7 +71,7 @@ class App extends Component {
       </div>
       ) : (
         <div className = "Frontpage">
-          <h3>Thanos has invaded Earth! It's up to you to assemble the Avengers to defeat him.</h3>
+          <h2>Thanos has invaded Earth! It's up to you to assemble the Avengers to defeat him.</h2>
           <Username heroNumber = {this.state.heroes}/>
           <button onClick = {() => this.handleGetAvengers()}>Assemble</button>
         </div>  

@@ -21,7 +21,7 @@ let allHeroes = [
    },
    {
     name: 'Black Widow',
-    superpower: '?',
+    superpower: 'Super Spy',
     index: 4
    },
    {
