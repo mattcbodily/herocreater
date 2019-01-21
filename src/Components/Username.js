@@ -17,7 +17,7 @@ class Username extends Component {
             <div>
             {this.props.heroNumber.length ? (
             <div>
-                <h4>{this.state.username}'s Hero Squad</h4>
+                <h4>{this.state.username}'s Avengers</h4>
             </div>
             ) : (
             <div>

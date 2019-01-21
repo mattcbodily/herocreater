@@ -13,6 +13,7 @@ class App extends Component {
       nameInput: '',
       superpowerInput: '',
     }
+    console.log(this.state.heroes)
     this.handleUpdateHero = this.handleUpdateHero.bind(this);
     this.handleDeleteHero = this.handleDeleteHero.bind(this);
   }
