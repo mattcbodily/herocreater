@@ -50,19 +50,20 @@ module.exports = {
 
     editHeroes: (req, res) => {
         const {index} = req.params;
-        const {body} = req;
-        allHeroes = allHeroes.map((hero) => {
-            if(hero.index === +index) {
-                allHeroes.name = body.name;
-                allHeroes.superpower = body.superpower;
-            }
-            return hero;
+        const editHero = req.body;
+        
+        let hero = allHeroes.find((element) => {
+            return element.index === +index;
         })
+
+        hero.name = editHero.name;
+        hero.superpower = editHero.superpower;
+
         res.status(200).send(allHeroes);
     },
 
     deleteHeroes: (req, res) => {
-        allHeroes = allHeroes.filter((hero) => hero.index !== +req.params.id)
+        allHeroes = allHeroes.filter((hero) => hero.index !== +req.params.index)
         res.status(200).send(allHeroes)
     }
 }
