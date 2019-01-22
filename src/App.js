@@ -13,7 +13,6 @@ class App extends Component {
       nameInput: '',
       superpowerInput: '',
     }
-    console.log(this.state.heroes) 
     this.handleUpdateHero = this.handleUpdateHero.bind(this);
     this.handleDeleteHero = this.handleDeleteHero.bind(this);
   }
@@ -57,7 +56,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.heroes)
     const mappedHeroes = this.state.heroes.map((heroObj) => {
       return(
         <DisplayHero key = {heroObj.index} heroes = {heroObj}
